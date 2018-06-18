@@ -148,7 +148,7 @@ createRestaurantHTML = (restaurant) => {
   textHolder.setAttribute("class","restaurant-textholder");
   li.append(textHolder);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   textHolder.append(name);
 
@@ -160,9 +160,14 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   textHolder.append(address);
 
-  const more = document.createElement('a');
+  const more = document.createElement('button');
   more.innerHTML = 'View Details';
-  more.href = DBHelper.urlForRestaurant(restaurant);
+  more.onclick = function(){
+    const url = DBHelper.urlForRestaurant(restaurant);
+    window.location = url;
+
+  }
+
   textHolder.append(more)
 
   return li

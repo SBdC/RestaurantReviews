@@ -244,7 +244,7 @@ nav h1 a {
   max-height: 180px;
 }
 
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   font-family: 'Baloo', cursive;
   color: var(--black);
   font-family: ;
@@ -261,11 +261,12 @@ nav h1 a {
   font-size: 1em;
 }
 
-#restaurants-list li a {
+#restaurants-list li  button{
   background-color: var(--clay);
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 400;
   border-radius: 5px;
+  border: 0;
   color: var(--offwhite);
   display: inline-block;
   font-size: 1em;
@@ -275,9 +276,10 @@ nav h1 a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  cursor:pointer;
 }
 
-#restaurants-list li a:hover {
+#restaurants-list li button:hover {
   background-color: var(--grey);
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
           animation: heartbeat 1.5s ease-in-out infinite both;
@@ -387,7 +389,7 @@ nav h1 a {
   width: 100%;
 }
 
-#reviews-container h2 {
+#reviews-container h3 {
   font-family: 'Baloo', cursive;
   color: var(--offwhite);
   font-size: 2em;
@@ -407,7 +409,11 @@ nav h1 a {
   line-height: 15px;
   padding-bottom:0.5em;
 }
-
+.stars{
+  color:var(--clay);
+  padding-top:10px; 
+  font-size: 1.2em;
+}
 #reviews-list {
   margin: 0;
   padding: 0;

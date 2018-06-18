@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -17,10 +17,10 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1 class="roll-in-blurred-left"><i class="fas fa-utensils"></i><a href="/">Restaurant Reviews</a><i class="fas fa-search"></i></h1>
+      <h1 class="roll-in-blurred-left" aria-label="restaurant reviews homepage" ><i class="fas fa-utensils"></i><a href="/">Restaurant Reviews</a><i class="fas fa-search"></i></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb">
+    <ul id="breadcrumb" role="navigation" aria-label="breadcrumb" >
       <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -35,21 +35,19 @@
     <section id="restaurant-container">
 
       <div class="thumb-restaurant">
-
-
         <img id="restaurant-img">
       </div>
       <div class="restaurant-info">
-        <h1 id="restaurant-name"></h1>
-        <p id="restaurant-cuisine"></p>
+        <h2 id="restaurant-name" aria-label="restaurant name" ></h2>
+        <p id="restaurant-cuisine" aria-label="restaurant cuisine" ></p>
         <table id="restaurant-hours"></table>
-        <p id="restaurant-address"></p>
+        <p id="restaurant-address" aria-label="restaurant address" ></p>
       </div>
 
     </section>
     <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map"></div>
+    <section id="map-container" aria-label="restaurant location">
+      <div id="map" role="application"></div>
     </section>
     <!-- End map -->
     <!-- end restaurant -->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -13,30 +13,35 @@
 
 <body>
   <header>
-    <nav>
+    <nav aria-label="restaurant reviews homepage">
       <h1 class="roll-in-blurred-left"><i class="fas fa-utensils"></i><a href="/">Restaurant Reviews</a><i class="fas fa-search"></i></h1>
     </nav>
   </header>
 
-  <main id="maincontent">
-    <section id="map-container">
+  <main id="maincontent" aria-label="restaurants map">
+    <section id="map-container" role="application">
       <div id="map"></div>
     </section>
+
     <section>
       <div class="filter-options">
-        <h2>Filter Results</h2>
+        <h2 tabindex="0">Filter Results</h2>
         <div class="filterSelect">
 
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="restaurant selection">
           <option value="all">All Neighborhoods</option>
         </select>
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="cuisine selection">
           <option value="all">All Cuisines</option>
         </select>
         </div>
       </div>
-      <ul id="restaurants-list"></ul>
-    </section>
+        </section>
+        <section>
+          <ul id="restaurants-list"></ul>
+        </section>
+
+
   </main>
 
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>

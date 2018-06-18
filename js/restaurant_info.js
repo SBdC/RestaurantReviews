@@ -89,6 +89,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     row.appendChild(time);
 
     hours.appendChild(row);
+    hours.setAttribute('aria-label', 'Restaurant' + self.restaurant.name + 'opening hours');
+    hours.setAttribute('tabindex','5');
   }
 }
 
@@ -99,7 +101,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('div');
   title.setAttribute ("class","reviewBar");
-  const titleWord = document.createElement('h2');
+  const titleWord = document.createElement('h3');
   titleWord.innerHTML = 'Reviews <i class="far fa-star"></i>';
   titleWord.setAttribute ("class","slide-in-left");
   title.appendChild(titleWord);
@@ -140,8 +142,9 @@ createReviewHTML = (review) => {
 
 
   const rating = document.createElement('p');
+  rating.setAttribute("class","stars")
+  rating.innerHTML = '★ '.repeat(parseInt(review.rating));
 
-  rating.innerHTML = `Rating: ${review.rating}`;
   userRating.appendChild(rating);
 
 
