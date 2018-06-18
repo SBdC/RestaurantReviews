@@ -58,6 +58,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name + " restaurant " + restaurant.cuisine_type + " cuisine";
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -80,6 +81,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     const day = document.createElement('td');
     day.innerHTML = key;
+    day.setAttribute ("class","dayStyle");
     row.appendChild(day);
 
     const time = document.createElement('td');
@@ -95,8 +97,12 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
-  title.innerHTML = 'Reviews';
+  const title = document.createElement('div');
+  title.setAttribute ("class","reviewBar");
+  const titleWord = document.createElement('h2');
+  titleWord.innerHTML = 'Reviews <i class="far fa-star"></i>';
+  titleWord.setAttribute ("class","slide-in-left");
+  title.appendChild(titleWord);
   container.appendChild(title);
 
   if (!reviews) {
@@ -116,18 +122,28 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
-  const li = document.createElement('li');
-  const name = document.createElement('p');
-  name.innerHTML = review.name;
-  li.appendChild(name);
 
+  const li = document.createElement('li');
+  const userRating = document.createElement('div');
+
+  userRating.setAttribute("class","userRating");
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  li.appendChild(date);
+  userRating.appendChild(date);
+
+
+
+  li.appendChild(userRating);
+  const name = document.createElement('p');
+  name.innerHTML = review.name;
+  userRating.appendChild(name);
+
 
   const rating = document.createElement('p');
+
   rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  userRating.appendChild(rating);
+
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
