@@ -90,7 +90,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     hours.appendChild(row);
     hours.setAttribute('aria-label', 'Restaurant' + self.restaurant.name + 'opening hours');
-    hours.setAttribute('tabindex','5');
+    hours.setAttribute('tabindex','-1');
   }
 }
 
@@ -127,29 +127,31 @@ createReviewHTML = (review) => {
 
   const li = document.createElement('li');
   const userRating = document.createElement('div');
-
   userRating.setAttribute("class","userRating");
-  const date = document.createElement('p');
-  date.innerHTML = review.date;
-  userRating.appendChild(date);
-
-
 
   li.appendChild(userRating);
+
+
   const name = document.createElement('p');
+  name.setAttribute("class","review-user-name");
   name.innerHTML = review.name;
   userRating.appendChild(name);
+
+  const date = document.createElement('p');
+  date.setAttribute("class","review-date")
+  date.innerHTML = review.date;
+  userRating.appendChild(date);
 
 
   const rating = document.createElement('p');
   rating.setAttribute("class","stars")
   rating.innerHTML = '★ '.repeat(parseInt(review.rating));
-
   userRating.appendChild(rating);
 
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.setAttribute("class","review-text");
   li.appendChild(comments);
 
   return li;
