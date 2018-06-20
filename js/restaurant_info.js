@@ -81,7 +81,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     const day = document.createElement('td');
     day.innerHTML = key;
-    day.setAttribute ("class","dayStyle");
+    day.setAttribute("class", "dayStyle");
     row.appendChild(day);
 
     const time = document.createElement('td');
@@ -90,7 +90,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     hours.appendChild(row);
     hours.setAttribute('aria-label', 'Restaurant' + self.restaurant.name + 'opening hours');
-    hours.setAttribute('tabindex','-1');
+    hours.setAttribute('tabindex', '-1');
   }
 }
 
@@ -100,10 +100,10 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('div');
-  title.setAttribute ("class","reviewBar");
+  title.setAttribute("class", "reviewBar");
   const titleWord = document.createElement('h3');
   titleWord.innerHTML = 'Reviews <i class="far fa-star"></i>';
-  titleWord.setAttribute ("class","slide-in-left");
+  titleWord.setAttribute("class", "slide-in-left");
   title.appendChild(titleWord);
   container.appendChild(title);
 
@@ -127,31 +127,31 @@ createReviewHTML = (review) => {
 
   const li = document.createElement('li');
   const userRating = document.createElement('div');
-  userRating.setAttribute("class","userRating");
+  userRating.setAttribute("class", "userRating");
 
   li.appendChild(userRating);
 
 
   const name = document.createElement('p');
-  name.setAttribute("class","review-user-name");
+  name.setAttribute("class", "review-user-name");
   name.innerHTML = review.name;
   userRating.appendChild(name);
 
   const date = document.createElement('p');
-  date.setAttribute("class","review-date")
+  date.setAttribute("class", "review-date")
   date.innerHTML = review.date;
   userRating.appendChild(date);
 
 
   const rating = document.createElement('p');
-  rating.setAttribute("class","stars")
+  rating.setAttribute("class", "stars")
   rating.innerHTML = '★ '.repeat(parseInt(review.rating));
   userRating.appendChild(rating);
 
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  comments.setAttribute("class","review-text");
+  comments.setAttribute("class", "review-text");
   li.appendChild(comments);
 
   return li;
@@ -160,7 +160,7 @@ createReviewHTML = (review) => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant=self.restaurant) => {
+fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;

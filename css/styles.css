@@ -1,20 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 
-body,
-html {
+body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-a {
+h1, h2, h3, h4, h5, a {
   margin: 0;
 }
 
@@ -24,9 +18,7 @@ html {
   font-size: 16px;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: inherit;
 }
 
@@ -34,14 +26,12 @@ body {
   background-color: var(--offwhite);
 }
 
-
 a {
   color: var(--clay);
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   color: var(--green);
   text-decoration: none;
 }
@@ -50,21 +40,9 @@ a img {
   border: none 0px #fff;
 }
 
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
 
 /* ====================== Colors====================== */
 
@@ -75,6 +53,7 @@ section {
   --grey: #515751;
   --green: #94b2b0;
 }
+
 /* ====================== main and footer===================== */
 
 #maincontent {
@@ -427,26 +406,28 @@ nav h1 a {
 }
 
 .review-user-name {
-  display:inline-block;
+  display: inline-block;
   text-align: left;
   background-color: var(--green);
   width: 50%;
-  padding:1.5em 1.8em;
+  padding: 1.5em 1.8em;
   letter-spacing: 2px;
   border-top-left-radius: 40px;
 }
+
 .review-date {
-  display:inline-block;
+  display: inline-block;
   text-align: right;
   background-color: var(--green);
   width: 50%;
-  padding:1.5em 1.8em;
+  padding: 1.5em 1.8em;
   letter-spacing: 2px;
 }
-.review-text {
 
-    padding: 1.5em;
+.review-text {
+  padding: 1.5em;
 }
+
 #reviews-list {
   margin: 0;
   padding: 0;
@@ -457,7 +438,6 @@ nav h1 a {
 }
 
 #reviews-list li {
-
   background-color: #fff;
   list-style-type: none;
   overflow: scroll;

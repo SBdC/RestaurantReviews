@@ -140,12 +140,12 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.alt =  restaurant.name + " restaurant " + restaurant.cuisine_type + " cuisine";;
+  image.alt = restaurant.name + " restaurant " + restaurant.cuisine_type + " cuisine";;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
   const textHolder = document.createElement('div');
-  textHolder.setAttribute("class","restaurant-textholder");
+  textHolder.setAttribute("class", "restaurant-textholder");
   li.append(textHolder);
 
   const name = document.createElement('h2');
@@ -162,7 +162,7 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
-  more.onclick = function(){
+  more.onclick = function() {
     const url = DBHelper.urlForRestaurant(restaurant);
     window.location = url;
 
